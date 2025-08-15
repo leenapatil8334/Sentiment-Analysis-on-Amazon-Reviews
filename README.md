@@ -16,3 +16,13 @@ Description of the main variables in the main dataset (i.e., "Software.json.gz")
 
 reviewerID - ID of the reviewer, e.g. A2SUAM1J3GNN3B
 asin - ID of the product, e.g. 0000013714
+brand - brand name
+main_cat - main category of the product (e.g., "Software"; "All Electronics")
+These sections are included in this Jupyter notebook:
+
+In Section 1 we prepare the two datasets and we merge them using the product ID.
+In Section 2 we create the binary rating variable. The binary rating variable is used as the target of the BOW (bag-of-words) model in the following sections.
+In Section 3 we apply pre-processing to the clients' reviews. We delete stopwords and numbers, and we use lower-case letters for all reviews; we remove punctuation, and we apply lemmatization.
+In Section 4 we perform Sentiment Analysis. In Section 4 we use Grid search (i.e., GridSearchCV) in order to select the best model -i.e., the model with the highest predictive power. We also use a pipeline within GridSearchCV.
+In Section 5 we use grid search together with SMOTE (Synthetic Minority Over-sampling Technique); in this section we use the unbalanced dataset, and we correct the unbalancedness of the dataset through the use of SMOTE.
+In Section 6 we draw a few conclusions about the effect of SMOTE on the "precision" and the "recall" of the estimator.
